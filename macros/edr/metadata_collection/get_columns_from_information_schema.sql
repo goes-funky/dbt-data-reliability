@@ -22,6 +22,7 @@
 {% endmacro %}
 
 {% macro bigquery__get_columns_from_information_schema(database_name, schema_name, table_name = none) %}
+    {# Why it is commented out: https://linear.app/y42/issue/PLA-2228 #}
     {# {% set schema_relation = api.Relation.create(database=database_name, schema=schema_name).without_identifier() %} #}
     {# {% set columns_schema = schema_relation.information_schema('COLUMNS') %} #}
     {# {% if elementary.can_query_relation(columns_schema) %} #}
