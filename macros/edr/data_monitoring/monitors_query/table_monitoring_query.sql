@@ -55,7 +55,7 @@
     ),
     metrics_final as (
     select
-        {{ elementary.edr_cast_as_string(dbt_model_id) }} as full_table_name,
+        {{ elementary.edr_cast_as_string(elementary.edr_quote(dbt_model_id)) }} as full_table_name,
         {{ elementary.null_string() }} as column_name,
         metric_name,
         {{ elementary.edr_cast_as_float('metric_value') }} as metric_value,
@@ -115,7 +115,7 @@
 
     metrics_final as (
         select
-            {{ elementary.edr_cast_as_string(dbt_model_id) }} as full_table_name,
+            {{ elementary.edr_cast_as_string(elementary.edr_quote(dbt_model_id)) }} as full_table_name,
             {{ elementary.null_string() }} as column_name,
             metric_name,
             {{ elementary.edr_cast_as_float('metric_value') }} as metric_value,
