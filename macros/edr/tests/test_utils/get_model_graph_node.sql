@@ -15,6 +15,7 @@
                 {% set node_name = node.name | lower %}
                 {% set node_alias = node.get('alias', '') | lower %}
                 {% set node_identifier = node.get('identifier', '') | lower %}
+                {% do elementary.edr_log('COMPARISON ' ~ node_name ~ '==' ~ relation_name ~ ` OR ` ~ node_alias ~ '==' ~ relation_name ~ ' OR ' ~ node_identifier ~ '==' ~ relation_name ) %}
                 {% if node_name == relation_name or node_alias == relation_name or node_identifier == relation_name %}
                     {{ return(node) }}
                 {% endif %}
