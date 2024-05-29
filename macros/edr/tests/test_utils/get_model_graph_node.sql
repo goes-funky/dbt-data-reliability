@@ -2,10 +2,14 @@
     {% if execute %}
         {# model here is actually the test node in the graph #}
         {% set test_graph_node = model %}
+        {% do elementary.edr_log('test_graph_node')
+        {% do elementary.edr_log(test_graph_node)
         {% set test_depends_on_unique_ids = test_graph_node.depends_on.nodes %}
         {# model relation is the relation object of the model where the test is defined #}
         {% set relation_name = model_relation.name | lower %}
         {% set depends_on_nodes = elementary.get_nodes_by_unique_ids(test_depends_on_unique_ids) %}
+        {% do elementary.edr_log('depends_on_nodes')
+        {% do elementary.edr_log(depends_on_nodes)
         {% if depends_on_nodes %}
             {% for node in depends_on_nodes %}
                 {% set node_name = node.name | lower %}
