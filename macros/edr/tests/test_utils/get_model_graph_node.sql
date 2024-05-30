@@ -8,7 +8,7 @@
         {# model relation is the relation object of the model where the test is defined #}
         {% set relation_name = model_relation.name | lower %}
 
-        {% if dbt_model_name %}
+        {% if dbt_model_id %}
             {% set relation_name = dbt_model_id.split('.')[2] %}
         {% endif %}
 
