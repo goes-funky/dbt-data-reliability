@@ -22,9 +22,10 @@
                                           detection_delay,
                                           anomaly_exclude_metrics,
                                           detection_period,
-                                          training_period) %}
+                                          training_period,
+                                          dbt_model_id=None) %}
 
-    {%- set model_graph_node = elementary.get_model_graph_node(model_relation) %}
+    {%- set model_graph_node = elementary.get_model_graph_node(model_relation, dbt_model_id=dbt_model_id) %}
 
     {# All anomaly detection tests #}
     {%- set timestamp_column = elementary.get_test_argument('timestamp_column', timestamp_column, model_graph_node) %}
