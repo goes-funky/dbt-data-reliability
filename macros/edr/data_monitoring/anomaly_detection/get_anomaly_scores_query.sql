@@ -1,5 +1,5 @@
 {% macro get_anomaly_scores_query(test_metrics_table_relation, model_relation, test_configuration, monitors, dbt_model_id, column_name = none, columns_only = false, metric_properties = none, data_monitoring_metrics_table=none) %}
-    {%- set model_graph_node = elementary.get_model_graph_node(model_relation) %}
+    {%- set model_graph_node = elementary.get_model_graph_node(model_relation, dbt_model_id=dbt_model_id) %}
     {%- set full_table_name = elementary.model_node_to_full_name(model_graph_node) %}
     {%- set test_execution_id = elementary.get_test_execution_id() %}
     {%- set test_unique_id = elementary.get_test_unique_id() %}
