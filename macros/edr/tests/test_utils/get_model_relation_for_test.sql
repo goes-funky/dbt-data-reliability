@@ -1,6 +1,8 @@
 {% macro get_model_relation_for_test(test_model, test_node) %}
     {# If the test model is not a string, then return as-is #}
     {% if test_model is not string %}
+        {% do elementary.edr_log('test_model_is_not_a_string') %}
+        {% do elementary.edr_log(test_model) %}
         {% do return(test_model) %}
     {% endif %}
 
