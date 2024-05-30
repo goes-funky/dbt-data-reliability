@@ -38,7 +38,8 @@
                                                                                                    detection_delay=detection_delay,
                                                                                                    anomaly_exclude_metrics=anomaly_exclude_metrics,
                                                                                                    detection_period=detection_period,
-                                                                                                   training_period=training_period) %}
+                                                                                                   training_period=training_period,
+                                                                                                   dbt_model_id=dbt_model_id) %}
         
         {%- if not test_configuration %}
             {{ exceptions.raise_compiler_error("Failed to create test configuration dict for test `{}`".format(test_table_name)) }}
