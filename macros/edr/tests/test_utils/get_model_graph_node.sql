@@ -9,6 +9,7 @@
         {% set relation_name = model_relation.name | lower %}
         {% set depends_on_nodes = elementary.get_nodes_by_unique_ids(test_depends_on_unique_ids) %}
         {% do elementary.edr_log('PRINT_GRAPH') %}
+        {% do elementary.edr_log(graph) %}
         {% do elementary.edr_log('depends_on_nodes') %}
         {% do elementary.edr_log(depends_on_nodes) %}
         {% if depends_on_nodes %}
